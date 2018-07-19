@@ -1,0 +1,100 @@
+// Set variables to use in the breakpoints
+$xs-min: 0;
+$xs-max: 1px;
+$sm-min: 2px;
+$sm-max: 480px;
+$md-min: 481px;
+$md-max: 839px;
+$lg-min: 840px;
+$lg-max: 1024px;
+$xl-min: 1025px;
+$xxl: 1240px;
+
+// Create the mixin for all the breakpoints
+@mixin respond-to($breakpoint) {
+  // MIN AND MAX WIDTH
+  @if $breakpoint == "xs" {
+    @media screen and (min-width: $xs-min) and (max-width: $xs-max) {
+      @content;
+    }
+  }
+
+  // MIN WIDTH
+  @if $breakpoint == "xs-min" {
+    @media screen and (min-width: $xs-min) {
+      @content;
+    }
+  }
+
+    // MIN AND MAX WIDTH
+  @else if $breakpoint == "sm" {
+    @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
+      @content;
+    }
+  }
+
+    // MIN WIDTH
+  @else if $breakpoint == "sm-min" {
+    @media screen and (min-width: $sm-min) {
+      @content;
+    }
+  }
+
+    // MIN AND MAX WIDTH
+  @else if $breakpoint == "md" {
+    @media screen and (min-width: $md-min) and (max-width: $md-max) {
+      @content;
+    }
+  }
+
+    // MIN WIDTH
+  @else if $breakpoint == "md-min" {
+    @media screen and (min-width: $md-min) {
+      @content;
+    }
+  }
+    // MAX WIDTH
+  @else if $breakpoint == "md-max" {
+    @media screen and (min-width: $md-max) {
+      @content;
+    }
+  }
+
+    // MIN AND MAX WIDTH
+  @else if $breakpoint == "lg" {
+    @media screen and (min-width: $lg-min) and (max-width: $lg-max) {
+      @content;
+    }
+  }
+
+    // MIN WIDTH
+  @else if $breakpoint == "lg-min" {
+    @media screen and (min-width: $lg-min) {
+      @content;
+    }
+  }
+
+    // MIN WIDTH
+  @else if $breakpoint == "xl" {
+    @media screen and (min-width: $xl-min) {
+      @content;
+    }
+  }
+
+    // MIN WIDTH
+  @else if $breakpoint == "xl-min" {
+    @media screen and (min-width: $xl-min) {
+      @content;
+    }
+
+    // MIN WIDTH
+  } @else if $breakpoint == "xxl" {
+    @media screen and (min-width: $xxl) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
